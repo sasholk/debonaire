@@ -87,9 +87,17 @@
     letter-spacing: toRem(-0.4);
     line-height: 1.31; /* 21/16 */
 
+    transition: color 0.3s;
+
     @media (max-width: $mobile) {
       font-size: toRem(32);
       color: #000;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $brandColor;
+      }
     }
   }
 }
