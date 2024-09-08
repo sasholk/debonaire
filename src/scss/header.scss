@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   z-index: 50;
-  background-color: $bgColor;
+  background-color: rgba($bgColor, 0.3);
 
   &__container {
     display: grid;
@@ -12,9 +12,21 @@
     align-items: center;
     padding-block: toRem(37);
 
-    @media (max-width: toEm(640)) {
+    transition: padding-block 0.3s;
+
+    @media (max-width: toEm(639.98)) {
       grid-template-columns: auto auto 1fr;
       padding-block: toRem(15);
+    }
+
+    ._header-scroll & {
+      backdrop-filter: blur(10px);
+    }
+
+    @media (min-width: toEm(640)) {
+      ._header-scroll & {
+        padding-block: toRem(20);
+      }
     }
   }
 
