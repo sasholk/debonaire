@@ -1,3 +1,245 @@
 //====================================================================================================
+.page {
+  &__hero {
+  }
+}
+
+// #region hero
+
+.hero {
+  padding-block: toRem(40) toRem(40);
+
+  @media (min-width: toEm(600)) {
+    padding-block: toRem(65) toRem(143);
+  }
+
+  &__container {
+  }
+
+  &__body {
+    position: relative;
+    max-width: toRem(955);
+    margin: 0 auto;
+
+    @media (min-width: toEm(600)) {
+      display: grid;
+      grid-template-columns: 41.884817% 31.099476% auto;
+      align-items: start;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 3;
+
+    font-family: 'Lexend Deca';
+    line-height: 1.33; /* 48/36 */
+    letter-spacing: toRem(-1.5);
+    color: #fff;
+
+    // animation
+    opacity: 0;
+    transform: translate(0, 20%);
+    ._watcher-view & {
+      transform: translate(0, 0);
+
+      transition:
+        opacity 1s 0.5s,
+        transform 1s 0.5s;
+      opacity: 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+
+    @include adaptiveValue('font-size', 36, 24, 0, 1024, 320);
+
+    @media (min-width: toEm(600)) {
+      padding-top: 10.893246%; /* 50/459 */
+      max-width: toRem(400);
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+
+    @media (min-width: toEm(600)) {
+      margin-left: toRem(-115);
+    }
+    @media (max-width: toEm(599.98)) {
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
+  }
+
+  &__main-img {
+    position: relative;
+    z-index: 2;
+
+    aspect-ratio: 412 / 459;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: toRem(2.7);
+
+    // animation
+    opacity: 0;
+    transform: translate(0, 5%);
+    ._watcher-view & {
+      transform: translate(0, 0);
+      transition:
+        opacity 1s 0.1s,
+        transform 1s 0.1s;
+      opacity: 1;
+    }
+  }
+
+  &__deco {
+    position: absolute;
+
+    // animation
+    transform: scale(0) rotate(-20deg);
+
+    &--one {
+      top: -16.557734%; /* 76/459 */
+      right: -26.699029%; /* 110/412 */
+
+      aspect-ratio: 233 / 195;
+      max-width: 56.553398%; /* 233/412 */
+
+      transform-origin: left bottom;
+
+      ._watcher-view & {
+        transition: all 1.5s 1s;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    &--two {
+      bottom: -31.154684%; /* 143/459 */
+      right: -21.116505%; /* 87/412 */
+
+      aspect-ratio: 239 / 278;
+      max-width: 58.009709%; /* 239/412 */
+
+      transform-origin: 0 0;
+
+      ._watcher-view & {
+        transition: all 1.5s 1s;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+  }
+
+  &__figure {
+    position: absolute;
+    bottom: -19.607843%; /* 90/459 */
+    left: -13.834951%; /* 57/412 */
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 47.815534%; /* 197/412 */
+    background-color: #63847f;
+    border-radius: 79% 21% 41% 59% / 17% 23% 77% 83%;
+
+    // animation
+    transform: scale(0) rotate(-20deg);
+    transform-origin: top right;
+    animation: morph 10s ease-in-out infinite;
+    ._watcher-view & {
+      transform: scale(1) rotate(0deg);
+      transition: all 1.5s 1s;
+    }
+  }
+
+  @keyframes morph {
+    0% {
+      border-radius: 79% 21% 41% 59% / 17% 23% 77% 83%;
+    }
+    25% {
+      border-radius: 93% 7% 78% 22% / 39% 60% 40% 61%;
+    }
+    75% {
+      border-radius: 25% 75% 35% 65% / 71% 42% 58% 29%;
+    }
+    100% {
+      border-radius: 79% 21% 41% 59% / 17% 23% 77% 83%;
+    }
+  }
+
+  &__content {
+    padding-top: toRem(8);
+
+    @media (max-width: toEm(599.98)) {
+      display: flex;
+      gap: toRem(20);
+    }
+  }
+
+  &__rounded-img {
+    position: relative;
+    z-index: 3;
+
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: toRem(243);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @media (min-width: toEm(600)) {
+      transform: translate(toRem(-65), 0) scale(0);
+
+      ._watcher-view & {
+        transform: translate(toRem(-65), 0) scale(1);
+        transition: all 1s 1.5s;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: toRem(30);
+      }
+    }
+    @media (max-width: toEm(599.98)) {
+      flex-shrink: 0;
+      flex-basis: toRem(100);
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    align-self: center;
+
+    // animation
+    opacity: 0;
+    transform: translate(-100%, 0);
+    ._watcher-view & {
+      transform: translate(0, 0);
+      transition:
+        opacity 0.5s 0.7s,
+        transform 0.5s 0.7s;
+      opacity: 1;
+    }
+
+    @media (min-width: toEm(600)) {
+      max-width: toRem(195);
+      padding-left: 15.652174%; /* 36/230 */
+    }
+  }
+}
+
+// #endregion
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
 
 //====================================================================================================
