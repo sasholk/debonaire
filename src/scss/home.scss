@@ -2,6 +2,9 @@
 .page {
   &__hero {
   }
+
+  &__focus {
+  }
 }
 
 // #region hero
@@ -38,11 +41,6 @@
   }
 
   &__title {
-    font-family: 'Lexend Deca';
-    line-height: 1.33; /* 48/36 */
-    letter-spacing: toRem(-1.5);
-    color: #fff;
-
     // animation
     opacity: 0;
     transform: translate(0, 20%);
@@ -54,8 +52,6 @@
         transform 1s 0.5s;
       opacity: 1;
     }
-
-    @include adaptiveValue('font-size', 36, 24, 0, 1024, 320);
 
     @media (min-width: toEm(600)) {
       padding-top: 10.893246%; /* 50/459 */
@@ -246,7 +242,6 @@
   }
 
   &__text {
-    line-height: 1.5;
     align-self: center;
 
     // animation
@@ -267,6 +262,99 @@
   }
 }
 
+// #endregion
+
+// #region focus
+.focus {
+  position: relative;
+  padding-bottom: toRem(180);
+
+  &__container {
+  }
+
+  &__content {
+    position: relative;
+
+    max-width: toRem(1240);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: toRem(80);
+
+    @include adaptiveValue('gap', 80, 15, 0, $containerWidth, 991.98);
+  }
+
+  &__pic {
+    position: relative;
+    z-index: 2;
+    &--start {
+      max-width: toRem(312);
+    }
+    &--end {
+      max-width: toRem(365);
+      align-self: flex-end;
+      transform: translate(0px, 25%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: toRem(3);
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    @include adaptiveValue('padding-top', 140, 20);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 20, 10);
+    }
+  }
+
+  &__text {
+    max-width: toRem(387);
+
+    > p {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  &__decor-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &__decor-item {
+    position: absolute;
+
+    &:first-child {
+      left: 0;
+      transform: translate(-47.976879%, 41.578947%);
+      width: 27.903226%; /* 346/1240 */
+      aspect-ratio: 346 / 342;
+    }
+    &:last-child {
+      right: 0;
+      width: 39.677419%; /* 492/1240 */
+      aspect-ratio: 492 / 369;
+    }
+  }
+
+  &__decor-value {
+    width: 100%;
+    height: 100%;
+  }
+}
 // #endregion
 
 //====================================================================================================
