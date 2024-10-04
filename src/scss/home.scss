@@ -279,29 +279,42 @@
     margin: 0 auto;
 
     display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: toRem(80);
+    flex-direction: column;
+    align-items: center;
 
-    @include adaptiveValue('gap', 80, 15, 0, $containerWidth, 991.98);
+    @include adaptiveValue('column-gap', 80, 15, 0, $containerWidth, 991.98);
+
+    @media (min-width: $mobile) {
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+      row-gap: toRem(50);
+    }
   }
 
   &__picture {
     position: relative;
-
+    width: 100%;
     &--start {
-      max-width: toRem(312);
+      @media (min-width: toEm(600)) {
+        max-width: toRem(312);
+      }
     }
 
     &--end {
-      max-width: toRem(365);
-      align-self: flex-end;
-      transform: translate(0px, 26.415094%); /* 140/530 */
+      @media (min-width: toEm(600)) {
+        max-width: toRem(365);
+      }
+      @media (min-width: $mobile) {
+        align-self: flex-end;
+        transform: translate(0px, 26.415094%); /* 140/530 */
+      }
     }
   }
 
   &__image {
     width: 100%;
+    max-width: inherit;
     border-radius: toRem(3);
   }
 
