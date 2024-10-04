@@ -286,9 +286,8 @@
     @include adaptiveValue('gap', 80, 15, 0, $containerWidth, 991.98);
   }
 
-  &__pic {
+  &__picture {
     position: relative;
-    z-index: 2;
     &--start {
       max-width: toRem(312);
     }
@@ -326,26 +325,30 @@
     }
   }
 
-  &__decor-items {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
+  // &__decor-items {
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 0;
+  //   top: 0;
+  // }
 
   &__decor-item {
     position: absolute;
+    z-index: -1;
 
-    &:first-child {
+    &--start {
       left: 0;
-      transform: translate(-47.976879%, 41.578947%);
-      width: 27.903226%; /* 346/1240 */
+      bottom: 0;
+      transform: translate(-47.976879%, 31.578947%);
+      width: 110.897436%; /* 346/312 */
       aspect-ratio: 346 / 342;
     }
-    &:last-child {
-      right: 0;
-      width: 39.677419%; /* 492/1240 */
+    &--end {
+      left: 0;
+      bottom: 0;
+      transform: translate(-66.260163%, 21.95122%); /* 81/369 */
+      width: 134.794521%; /* 492/365 */
       aspect-ratio: 492 / 369;
     }
   }
