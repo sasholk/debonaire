@@ -267,7 +267,7 @@
 // #region focus
 .focus {
   position: relative;
-  padding-bottom: toRem(180);
+  padding-bottom: toRem(40);
 
   &__container {
   }
@@ -288,13 +288,15 @@
 
   &__picture {
     position: relative;
+
     &--start {
       max-width: toRem(312);
     }
+
     &--end {
       max-width: toRem(365);
       align-self: flex-end;
-      transform: translate(0px, 25%);
+      transform: translate(0px, 26.415094%); /* 140/530 */
     }
   }
 
@@ -336,6 +338,15 @@
   &__decor-item {
     position: absolute;
     z-index: -1;
+
+    stroke-dashoffset: 2000;
+    stroke-dasharray: 1500;
+
+    &._watcher-view {
+      transition: all 3s linear 0.1s;
+      stroke-dashoffset: 0;
+      // stroke-dasharray: 0;
+    }
 
     &--start {
       left: 0;
