@@ -446,21 +446,50 @@
     flex: 0 1 22.222222%; /* 320/1440 */
   }
 }
+
 .decor-love {
   @include adaptiveValue('padding-top', 235, 0);
+
+  &__body {
+    position: relative;
+  }
+
   &__line-item {
     position: absolute;
     left: 0;
     top: 0;
+    aspect-ratio: 525 / 531;
+    width: 100%;
+    max-width: toRem(525);
   }
 
   &__line {
+    width: 100%;
+    height: 100%;
+
+    stroke-dashoffset: 2000;
+    stroke-dasharray: 1500;
+
+    &._watcher-view {
+      transition: all 2s linear 0.1s;
+      stroke-dashoffset: 0;
+      // stroke-dasharray: 0;
+    }
+  }
+
+  &__hair-item {
+    transform: translate(50%, 0px);
   }
 
   &__hair {
-    max-width: 100%;
     aspect-ratio: 1 / 1;
+    width: 100%;
     border-radius: 50%;
+  }
+
+  &__dryer-item {
+    /* 95/400 */
+    transform: translate(0, -23.75%);
   }
 
   &__dryer {
