@@ -10,7 +10,7 @@
 
   &--big {
     line-height: 1.1; /* 66/60 */
-    @include adaptiveValue('font-size', 60, 36, 0, 1024, 320);
+    @include adaptiveValue('font-size', 60, 36, 0, 1440, 320);
   }
 }
 

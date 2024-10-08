@@ -301,13 +301,13 @@
     width: 100%;
     &--start {
       @media (min-width: toEm(600)) {
-        max-width: toRem(312);
+        flex-basis: toRem(312);
       }
     }
 
     &--end {
       @media (min-width: toEm(600)) {
-        max-width: toRem(365);
+        flex-basis: toRem(365);
       }
       @media (min-width: $mobile) {
         align-self: flex-end;
@@ -324,10 +324,12 @@
   &__body {
     position: relative;
     z-index: 2;
+
     @include adaptiveValue('padding-top', 140, 20);
   }
 
   &__title {
+    @include adaptiveValue('font-size', 36, 24, 0, 1240, 320);
     &:not(:last-child) {
       @include adaptiveValue('margin-bottom', 20, 10);
     }
