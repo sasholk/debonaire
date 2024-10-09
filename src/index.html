@@ -169,37 +169,62 @@
 
         <!-- #region services -->
         <section data-prlx-parent class="page__services services">
-          <h2 class="services__title title">Our Services</h2>
-          <div class="services__content">
-            <article href="#" class="services__item item-service">
-              <a href="#" class="item-service__image-link">
-                <img class="item-service__image" src="@img/services/image-1.png" alt="Image" />
-              </a>
+          <div class="services__container">
+            <h2 data-prlx class="services__title title">Our Services</h2>
 
-              <h4 class="item-service__title">
-                <a href="#" class="item-service__title-link">Cut.</a>
-              </h4>
-            </article>
+            <div class="services__body">
+              <div class="services__items">
+                <article class="services__item item-service">
+                  <a href="#" class="item-service__link">
+                    <img
+                      data-prlx
+                      data-coefficient="2"
+                      class="item-service__image"
+                      src="@img/services/image-1.png"
+                      alt="Image"
+                    />
+                    <h5 data-prlx class="item-service__name title title--min">Cut.</h5>
+                  </a>
+                </article>
 
-            <article href="#" class="services__item item-service">
-              <div class="item-service__title">Color.</div>
-              <img class="item-service__image" src="@img/services/image-2.png" alt="Image" />
-              <div class="item-service__text">
-                <p>We create a customized new look for you.</p>
+                <article class="services__item item-service">
+                  <a href="#" class="item-service__link">
+                    <h5 data-prlx class="item-service__name title title--min">Color.</h5>
+                    <img
+                      data-prlx
+                      data-coefficient="2"
+                      class="item-service__image"
+                      src="@img/services/image-2.png"
+                      alt="Image"
+                    />
+                  </a>
+
+                  <img class="item-service__figure" src="@img/services/deco-2.svg" alt="Image" />
+                </article>
+
+                <article class="services__item item-service">
+                  <a href="#" class="item-service__link">
+                    <img
+                      data-prlx
+                      data-coefficient="2"
+                      class="item-service__image"
+                      src="@img/services/image-3.png"
+                      alt="Image"
+                    />
+
+                    <h5 data-prlx class="item-service__name title title--min">Design.</h5>
+                  </a>
+
+                  <img class="item-service__deco" src="@img/services/deco-1.svg" alt="Image" />
+                </article>
               </div>
 
-              <a href="" class="item-service__link book"><span>See Our Menu</span></a>
-            </article>
+              <div class="services__content content-services">
+                <h4 class="content-services__title title">We create a customized new look for you.</h4>
 
-            <article href="#" class="services__item item-service">
-              <a href="#" class="item-service__image-link">
-                <img class="item-service__image" src="@img/services/image-1.png" alt="Image" />
-              </a>
-
-              <h4 class="item-service__title">
-                <a href="#" class="item-service__title-link">Cut.</a>
-              </h4>
-            </article>
+                <a href="" class="content-services__link book"><span>See Our Menu</span></a>
+              </div>
+            </div>
           </div>
         </section>
         <!-- #endregion -->
