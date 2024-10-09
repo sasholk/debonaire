@@ -11,6 +11,12 @@
 
   &__services {
   }
+
+  &__passion {
+  }
+
+  &__best {
+  }
 }
 
 // #region hero
@@ -664,6 +670,7 @@
 // #region passion
 .passion {
   position: relative;
+
   &__container {
     position: relative;
     aspect-ratio: 1440 / 720;
