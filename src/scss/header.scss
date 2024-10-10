@@ -1,7 +1,6 @@
 .header {
   position: fixed;
   width: 100%;
-  // position: sticky;
   top: 0;
   left: 0;
   z-index: 50;
@@ -77,12 +76,6 @@
 }
 
 .menu {
-  &__icon {
-  }
-
-  &__body {
-  }
-
   &__list {
     display: flex;
     align-items: center;
@@ -96,9 +89,6 @@
       align-items: flex-start;
       row-gap: toRem(15);
     }
-  }
-
-  &__item {
   }
 
   &__link {
